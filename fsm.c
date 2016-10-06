@@ -10,6 +10,7 @@
 
 bool cause_display() {
     printf("true cause_display\n");
+    sleep(1);
     return true;
 }
 
@@ -19,6 +20,7 @@ void effect_display() {
 
 bool cause_message() {
     printf("false cause_message\n");
+    sleep(1);
     return false;
 }
 
@@ -32,9 +34,9 @@ void effect_message() {
  * e is effect
  * ns is next state
  *
- * The ideea is this:
+ * The idea is this:
  *
- * The list is scanned, the function 'cause' is run and retyurns a boolean.
+ * The list is scanned, the function 'cause' is run and returns a boolean.
  * If this is true then the 'arc' is to be traversed, and 'effect' (which returns nothing)
  * is then run.
  *
@@ -111,7 +113,7 @@ int main() {
     ptr = addArc(machine[0], cause_display,effect_display,1);
     machine[0] = ptr;
 
-    ptr = addArc(machine[1], cause_message,effect_message,1);
+    ptr = addArc(machine[1], cause_message,effect_message,0);
     machine[1] = ptr;
 
     while(true) {
@@ -126,8 +128,5 @@ int main() {
             machineState=localState;
         }
     }
-
-
-
 }
 
