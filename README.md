@@ -1,1 +1,1 @@
-# SimpleFiniteStateMAchine
+# SimpleFiniteStateMachine
